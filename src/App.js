@@ -9,15 +9,24 @@ class App extends Component {
     this.state = {
       destination: "",
       term: "",
-      location: ""
-    }
+      location: "",
+      businesses: []
+    },
+
+    this.updateAppState = this.updateAppState.bind(this);
+  }
+
+  updateAppState(local,category) {
+    this.setState({destination: local, term: category})
+    console.log("this works");
+    console.log(this.state)
   }
 
   render() {
     return (
       <div>
         <h1 className="title"> Pick4Me </h1>
-        <Search />
+        <Search check={this.updateAppState}/>
       </div>
     );
   }
