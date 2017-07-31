@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router'
-import { BrowserRouter, Route} from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import Search from './components/Search'
+import BusinessCard from './components/BusinessCard'
 import './css/App.css';
 
 class App extends Component {
@@ -20,18 +21,18 @@ class App extends Component {
 
   updateAppState(local,category) {
     this.setState({destination: local, term: category})
-    console.log("this works");
-    console.log(this.state)
   }
 
   render() {
     return (
       <div>
         <h1 className="title"> Pick4Me </h1>
-        <Search check={this.updateAppState}/>
-        <Route>
-
-        </Route>
+      <BrowserRouter>
+        <div>
+        <Route exact path={"/"} component={() => <Search check={this.updateAppState}/>} />
+        <Route path='/result' component={BusinessCard}/>
+        </div>
+      </BrowserRouter>
       </div>
     );
   }

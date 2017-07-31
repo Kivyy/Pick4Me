@@ -7,7 +7,7 @@ class Search extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-  
+
   handleSubmit(e) {
     e.preventDefault()
     let inputLocation = this.refs.location.value;
@@ -16,7 +16,7 @@ class Search extends Component {
   }
 
   render() {
-    console.log(this.props.check)
+    console.log(this.props)
     return (
       <form >
           <label>
