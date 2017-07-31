@@ -17,9 +17,7 @@ class App extends Component {
   }
 
   updateAppState(local,category) {
-    this.setState({destination: local, term: category})
-    console.log("this works");
-    console.log(this.state)
+    this.setState({destination: local, term: category});
   }
 
   render() {
