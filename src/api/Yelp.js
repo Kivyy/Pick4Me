@@ -18,6 +18,7 @@ let businessSearch = (inputLocation) => {
   });
 }
 
+
 module.exports = {
   businessSearch,
 };
