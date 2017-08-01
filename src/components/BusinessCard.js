@@ -6,6 +6,14 @@ class BusinessCard extends Component {
   constructor () {
     super()
   }
+
+  componentDidMount () {
+    fetch("http://localhost:3000/").then((response) => {
+      response.json().then((json)=> {
+        console.log(json);
+      })
+    })
+  }
   render() {
     return (
       <div>
