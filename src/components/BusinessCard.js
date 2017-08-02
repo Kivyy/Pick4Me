@@ -6,11 +6,15 @@ class BusinessCard extends Component {
   constructor () {
     super()
   }
-  
+
   render() {
+    const newCard = this.props.newCard
+    const bar = this.props.selectedBar
     return (
       <div>
-        <p>This is the business card component</p>
+        <p>{bar.name}</p>
+        <button> X </button>
+        <button onClick={newCard}> Yes </button> 
       </div>
     )
   }

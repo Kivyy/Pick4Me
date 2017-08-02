@@ -17,11 +17,7 @@ class App extends Component {
       selectedBusiness: []
     },
 
-    this.updateAppState = this.updateAppState.bind(this);
-  }
-
-  updateAppState(local,category) {
-    this.setState({destination: local, term: category})
+    this.handleChangeBusiness = this.handleChangeBusiness.bind(this);
   }
 
   componentWillMount () {
@@ -33,6 +29,9 @@ class App extends Component {
     })
   }
 
+  handleChangeBusiness(){
+      this.setState({selectedBusiness: _.sample(this.state.businesses)});
+  }
 
   render() {
     return (
@@ -40,8 +39,8 @@ class App extends Component {
         <h1 className="title"> Pick4Me </h1>
       <BrowserRouter>
         <div>
-        <Route exact path={"/"} component={() => <Search check={this.updateAppState}/>} />
-        <Route path='/result' component={BusinessCard}/>
+        <Route exact path={"/"} component={Search} />
+        <Route path='/result' component={() => <BusinessCard selectedBar={this.state.selectedBusiness} newCard={this.handleChangeBusiness}/>}/>
         </div>
       </BrowserRouter>
       </div>
