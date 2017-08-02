@@ -23,7 +23,13 @@ class App extends Component {
     this.setState({destination: local, term: category})
   }
 
-  
+  componentDidMount () {
+    fetch("http://localhost:3000/").then((response) => {
+      response.json().then((json)=> {
+        this.setState({businesses: json});
+      })
+    })
+  }
 
   render() {
     return (
