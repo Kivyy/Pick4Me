@@ -10,13 +10,8 @@ class App extends Component {
     super()
 
     this.state = {
-      destination: "",
-      term: "",
-      location: "",
       businesses: []
-    },
-
-    this.updateAppState = this.updateAppState.bind(this);
+    }
   }
 
   updateAppState(local,category) {
