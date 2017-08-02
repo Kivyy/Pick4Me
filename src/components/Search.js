@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import yelpApi from '../api/Yelp'
 import { Redirect } from 'react-router'
 
 class Search extends Component {
