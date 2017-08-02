@@ -23,6 +23,8 @@ class App extends Component {
     this.setState({destination: local, term: category})
   }
 
+  
+
   render() {
     return (
       <div>
