@@ -2,18 +2,19 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router'
 import { BrowserRouter, Route } from 'react-router-dom'
 import Search from './components/Search'
+import lodash from 'lodash';
 import BusinessCard from './components/BusinessCard'
 import './css/App.css';
+
+const _ = lodash;
 
 class App extends Component {
   constructor() {
     super()
 
     this.state = {
-      destination: "",
-      term: "",
-      location: "",
-      businesses: []
+      businesses: [],
+      selectedBusiness: []
     },
 
     this.updateAppState = this.updateAppState.bind(this);
@@ -23,13 +24,15 @@ class App extends Component {
     this.setState({destination: local, term: category})
   }
 
-  componentDidMount () {
+  componentWillMount () {
     fetch("http://localhost:3000/").then((response) => {
-      response.json().then((json)=> {
-        this.setState({businesses: json});
+      response.json().then((data)=> {
+        this.setState({businesses: data});
+        this.setState({selectedBusiness: _.sample(this.state.businesses)});
       })
     })
   }
+
 
   render() {
     return (

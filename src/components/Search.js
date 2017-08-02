@@ -9,7 +9,6 @@ class Search extends Component {
       fireRedirect: false
     }
 
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   submitForm = (e) => {
