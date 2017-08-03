@@ -5,21 +5,30 @@ import {Map, Marker, GoogleApiWrapper} from 'google-maps-react'
 
 class GoogleMapContainer extends React.Component {
     render() {
-        return(
+        let barLat = this.props.barLat;
+        let barLong = this.props.barLong;
+        let barPosition = {
+          lat: barLat,
+          lng: barLong
+        }
+        if(barPosition){
+          return(
             <Map google={this.props.google}
-                style={{width: '50%', height: '50%', position: 'relative'}}
-                className={'map'}
-                zoom={14}
-                initialCenter={{
-                lat: 40.706567,
-                lng: -74.009042
-              }}>
-              <Marker
-                name={'Wall Street'}
-                position={{lat: 40.706567, lng: -74.009042}} />
+            style={{width: '50%', height: '50%', position: 'relative'}}
+            className={'map'}
+            zoom={14}
+            initialCenter={barPosition}>
+            <Marker
+            name={'Wall Street'}
+            position={barPosition} />
             </Map>
 
-        )
+          )
+        } else {
+          return(
+            <div>Loading...</div>
+          )
+        }
     }
 }
 

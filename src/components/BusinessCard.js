@@ -22,6 +22,7 @@ class BusinessCard extends Component {
           <img src={bar.image_url} />
           <button> X </button>
           <button onClick={newCard}> Yes </button>
+            <GoogleMapContainer barLat={bar.coordinates.latitude} barLong={bar.coordinates.longitude} /> 
         </div>
       )
     } else {
