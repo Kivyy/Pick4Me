@@ -35,7 +35,7 @@ export default class DirectionsExample extends Component {
     DirectionsService.route({
       origin: this.state.origin,
       destination: this.state.destination,
-      travelMode: google.maps.TravelMode.DRIVING,
+      travelMode: google.maps.TravelMode.WALKING,
     }, (result, status) => {
       if (status === google.maps.DirectionsStatus.OK) {
         this.setState({
@@ -48,6 +48,7 @@ export default class DirectionsExample extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <DirectionsExampleGoogleMap
         containerElement={
