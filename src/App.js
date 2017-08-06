@@ -41,6 +41,7 @@ class App extends Component {
         <div>
         <Route exact path={"/"} component={Search} />
         <Route path='/result' component={() => <BusinessCard selectedBar={this.state.selectedBusiness} newCard={this.handleChangeBusiness}/>}/>
+        <Route path='/selectedbar' component={() => <BusinessCard selectedBar={this.state.selectedBusiness} newCard={this.handleChangeBusiness}/>}/>
         </div>
       </BrowserRouter>
       </div>
