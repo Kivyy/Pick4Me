@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import yelp from 'yelp-fusion';
-import xhr from 'xhr';
-import GoogleMapContainer from './Map';
 import UserLocation from './Geolocation';
 import DirectionsExample from './NewMap';
 import { Redirect } from 'react-router'
