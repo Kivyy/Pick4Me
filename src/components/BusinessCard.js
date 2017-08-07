@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import UserLocation from './Geolocation';
 import DirectionsExample from './NewMap';
 import { Redirect } from 'react-router'
 
@@ -13,17 +12,7 @@ class BusinessCard extends Component {
       fireRedirect: false
     }
     this.renderMap = this.renderMap.bind(this)
-    this.handleUserLocation = this.handleUserLocation.bind(this);
     this.clickYes = this.clickYes.bind(this);
-  }
-
-  renderMap(){
-    const bar = this.props.selectedBar
-    this.setState({map: !this.state.map})
-  }
-
-  handleUserLocation(location){
-    this.setState({userLocation: location});
   }
 
   clickYes = (e) => {
@@ -46,7 +35,6 @@ class BusinessCard extends Component {
             <Redirect to='/selectedbar'/>
           )}
           <button onClick={newCard}> No </button>
-          <UserLocation submitLocation={this.handleUserLocation}/>
         </div>
       )
 
