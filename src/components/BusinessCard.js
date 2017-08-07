@@ -11,7 +11,6 @@ class BusinessCard extends Component {
       userLocation: '',
       fireRedirect: false
     }
-    this.renderMap = this.renderMap.bind(this)
     this.clickYes = this.clickYes.bind(this);
   }
 
