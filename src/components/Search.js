@@ -20,8 +20,8 @@ class Search extends Component {
 
     return (
       <div>
-        <form onSubmit={this.submitForm}>
-          <button type="submit">Submit</button>
+        <form onSubmit={this.submitForm} className="text-center">
+          <button className="btn-lg btn-all"> Start </button>
         </form>
         {fireRedirect && (
           <Redirect to='/result'/>

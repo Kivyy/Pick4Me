@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DirectionsExample from './NewMap';
-import { Redirect } from 'react-router'
-
+import { Redirect } from 'react-router';
+import { Card, CardImg, CardText, CardBlock,CardTitle, CardSubtitle, Button } from 'reactstrap';
 
 class BusinessCard extends Component {
   constructor () {
@@ -23,20 +23,25 @@ class BusinessCard extends Component {
     const newCard = this.props.newCard
     const bar = this.props.selectedBar
 
+
     if(bar.coordinates){
       return (
         <div>
-          <h2>{bar.name}</h2>
-          <h4>Phone Number: {bar.display_phone}</h4>
-          <img src={bar.image_url} />
-          <button onClick={this.clickYes}> Yes </button>
-          {fireRedirect && (
-            <Redirect to='/selectedbar'/>
-          )}
-          <button onClick={newCard}> No </button>
+          <Card>
+            <CardImg top className="my-flex-card" width="100%" src={bar.image_url} alt="Card image cap" />
+            <CardBlock>
+              <CardTitle>Bar Name:</CardTitle>
+              <CardSubtitle>{bar.name}</CardSubtitle>
+              <CardText>Some quick example text to build on the card title and make up the bulk of the cards content.</CardText>
+              <button  className="btn" onClick={this.clickYes}> Yes </button>
+              {fireRedirect && (
+                <Redirect to='/selectedbar'/>
+              )}
+              <button className="btn" onClick={newCard}> No </button>
+            </CardBlock>
+          </Card>
         </div>
       )
-
     } else {
       return(
         <div>Loading...</div>
