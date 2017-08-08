@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route , Link} from 'react-router-dom'
 import Search from './components/Search'
 import lodash from 'lodash';
 import BusinessCard from './components/BusinessCard';
 import SelectedBar from './components/SelectedBar';
 import './css/App.css';
+
 
 const _ = lodash;
 
@@ -36,8 +37,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <h1 className="title"> Pick4Me </h1>
+      <div className="container text-center">
+        <a href='/' className="title text-center"> BarTindr </a>
       <BrowserRouter>
         <div>
         <Route exact path={"/"} component={Search} />
